@@ -45,7 +45,7 @@ function App() {
   1. Use just 1s if you want!
   1. And last but not least, let's not forget embedded images:
 
-  ![React Logo w/ Text](https://i.pinimg.com/originals/f3/47/70/f34770503b90f26ea389f557500ff825.png=100x100)`);
+  ![React Logo w/ Text](https://i.pinimg.com/originals/f3/47/70/f34770503b90f26ea389f557500ff825.png)`);
 
   const handleChange = e => {
     setText(e.target.value);
