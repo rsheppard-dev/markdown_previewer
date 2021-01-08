@@ -3,20 +3,17 @@ import Markdown from './components/Markdown';
 import Previewer from './components/Previewer';
 
 function App() {
-  const [text, setText] = useState(`# Welcome to my React Markdown Previewer!
+  const [text, setText] = useState(`# React Markdown Previewer!
+  ## Made by Roy Sheppard
+  ### Cheat sheet:
 
-  ## This is a sub-heading...
-  ### And here's some other cool stuff:
-
-  Heres some code, \`<div></div>\`, between 2 backticks.
+  Inline code: \`<div></div>\`
 
   \`\`\`
-  // this is multi-line code:
+  // sample of multi-line code:
 
-  function anotherExample(firstLine, lastLine) {
-    if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-      return multiLineCode;
-    }
+  const displayMarkdown = () => {
+    console.log('This is multi-line code');
   }
   \`\`\`
 
@@ -25,7 +22,7 @@ function App() {
   Or... wait for it... **_both!_**
   And feel free to go crazy ~~crossing stuff out~~.
 
-  There's also [links](https://www.freecodecamp.com), and
+  There's also [links](http://www.roy-sheppard.com), and
   > Block Quotes!
 
   And if you want to get really crazy, even tables:
@@ -38,8 +35,7 @@ function App() {
   - And of course there are lists.
     - Some are bulleted.
       - With different indentation levels.
-          - That look like this.
-
+        - That look like this.
 
   1. And there are numbererd lists too.
   1. Use just 1s if you want!
@@ -56,25 +52,33 @@ function App() {
     const preview = document.getElementById('preview-win');
     const sizeButtons = document.querySelectorAll('.size-button');
 
-    sizeButtons.forEach (button => {
+    sizeButtons.forEach(button => {
       button.classList.toggle('fa-expand-arrows-alt');
       button.classList.toggle('fa-compress-arrows-alt');
     });
-    
+
     if (e.target.id === "editor-btn" || e.target.parentElement.id === "editor-btn") {
       preview.classList.toggle('d-none');
+      editor.classList.toggle('col-6');
+      editor.classList.toggle('col-12');
     } else {
       editor.classList.toggle('d-none');
+      preview.classList.toggle('col-6');
+      preview.classList.toggle('col-12');
     }
   }
 
   return (
-    <div className="App container-fluid p-4">
-      <div className="row gap-3">
-        <Markdown text={text} handleChange={handleChange} handleClick={handleClick} />
-        <Previewer text={text} handleClick={handleClick} />
+    <main>
+      <div className="App container-fluid p-4">
+
+        <div className="row">
+          <Markdown text={text} handleChange={handleChange} handleClick={handleClick} />
+          <Previewer text={text} handleClick={handleClick} />
+        </div>
+
       </div>
-    </div>
+    </main>
   );
 }
 
