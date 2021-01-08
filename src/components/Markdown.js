@@ -1,7 +1,7 @@
 const Markdown = ({ text, handleChange, handleClick }) => {
 
   return (
-    <div id="editor-win" className="col-6 mb-3">
+    <div id="editor-win" className="col-md-12 col-lg-6 mb-3">
       <section>
         <div className="card tx-dark bg-light">
           <div className="card-header d-flex align-items-center justify-content-between">

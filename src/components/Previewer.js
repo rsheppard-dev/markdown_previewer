@@ -13,7 +13,7 @@ const Previewer = ({ text, handleClick }) => {
   }
 
   return (
-    <div id="preview-win" className="col-6 mb-3">
+    <div id="preview-win" className="col-md-12 col-lg-6 mb-3">
       <section>
         <div className="card tx-dark bg-light">
           <div className="card-header d-flex align-items-center justify-content-between">

@@ -59,12 +59,10 @@ function App() {
 
     if (e.target.id === "editor-btn" || e.target.parentElement.id === "editor-btn") {
       preview.classList.toggle('d-none');
-      editor.classList.toggle('col-6');
-      editor.classList.toggle('col-12');
+      editor.classList.toggle('col-lg-6');
     } else {
       editor.classList.toggle('d-none');
-      preview.classList.toggle('col-6');
-      preview.classList.toggle('col-12');
+      preview.classList.toggle('col-lg-6');
     }
   }
 
